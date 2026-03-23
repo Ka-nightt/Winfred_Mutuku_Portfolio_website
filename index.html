@@ -6,12 +6,12 @@
     <title>My Portfolio</title>
     <style>
       :root {
-        --primary-color: #4f46e5; /* Indigo-600 */
-        --secondary-color: #6366f1; /* Indigo-400 */
-        --light-color: #f9fafb; /* Gray-50 */
-        --dark-color: #111827; /* Gray-900 */
-        --text-color: #374151; /* Gray-700 */
-        --accent-color: #ec4899; /* Pink-500 */
+        --primary-color: #0f766e; /* Teal-700 - rich, professional */
+        --secondary-color: #14b8a6; /* Teal-500 - vibrant accent */
+        --light-color: #f8fafc; /* Slate-50 - soft white */
+        --dark-color: #0f172a; /* Slate-900 - deep navy */
+        --text-color: #334155; /* Slate-700 - comfortable reading */
+        --accent-color: #f97316; /* Orange-500 - warm coral accent */
         --font-heading: "Poppins", sans-serif;
         --font-body: "Open Sans", sans-serif;
       }
@@ -103,7 +103,7 @@
         max-width: 700px;
         margin-left: auto;
         margin-right: auto;
-        color: #d1d5db; /* Gray-300 */
+        color: #e2e8f0; /* Slate-200 - lighter for contrast */
         margin-bottom: 2.5rem;
       }
       #hero .cta-btn {
@@ -125,7 +125,7 @@
       #hero .cta-btn:hover {
         background-color: var(--accent-color);
         color: white;
-        box-shadow: 0 6px 10px rgba(236, 72, 153, 0.5);
+        box-shadow: 0 6px 10px rgba(249, 115, 22, 0.5);
       }
 
       /* About Section */
@@ -145,10 +145,6 @@
         max-width: 100%;
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
       }
-      #about .content {
-        flex: 1;
-        min-width: 280px;
-      }
       #about h2 {
         font-family: var(--font-heading);
         font-size: 2rem;
@@ -165,18 +161,19 @@
         gap: 0.8rem;
       }
       #about .skill {
-        background-color: var(--light-color);
+        background-color: #e0f2fe; /* Light blue-teal */
         padding: 0.6rem 1rem;
         border-radius: 20px;
         font-weight: 600;
-        color: var(--secondary-color);
-        box-shadow: 0 2px 4px rgba(99, 102, 241, 0.3);
-        transition: background-color 0.3s ease;
+        color: var(--primary-color);
+        box-shadow: 0 2px 4px rgba(15, 118, 110, 0.2);
+        transition: all 0.3s ease;
       }
       #about .skill:hover {
         background-color: var(--secondary-color);
         color: white;
         cursor: default;
+        transform: translateY(-2px);
       }
 
       /* Portfolio Section */
@@ -233,7 +230,7 @@
       .project-description {
         flex: 1;
         font-size: 0.95rem;
-        color: #4b5563; /* Gray-600 */
+        color: #475569; /* Slate-600 */
         margin-bottom: 1rem;
       }
       .project-links a {
@@ -279,16 +276,16 @@
       #contact textarea {
         padding: 0.75rem 1rem;
         font-size: 1rem;
-        border: 2px solid #d1d5db; /* Gray-300 */
+        border: 2px solid #cbd5e1; /* Slate-300 */
         border-radius: 8px;
-        transition: border-color 0.3s ease;
+        transition: all 0.3s ease;
         font-family: var(--font-body);
       }
       #contact input:focus,
       #contact textarea:focus {
         outline: none;
         border-color: var(--primary-color);
-        box-shadow: 0 0 5px var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
       }
       #contact textarea {
         resize: vertical;
@@ -304,27 +301,29 @@
         border: none;
         border-radius: 9999px;
         cursor: pointer;
-        transition: background-color 0.3s ease;
+        transition: all 0.3s ease;
       }
       #contact button:hover {
         background-color: var(--accent-color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
       }
 
       /* Footer */
       footer {
         background-color: var(--dark-color);
-        color: #9ca3af; /* Gray-400 */
+        color: #94a3b8; /* Slate-400 */
         text-align: center;
         padding: 1rem 0;
         font-size: 0.9rem;
       }
       footer a {
-        color: #9ca3af;
+        color: #94a3b8;
         margin: 0 0.5rem;
         transition: color 0.3s ease;
       }
       footer a:hover {
-        color: white;
+        color: var(--accent-color);
       }
 
       /* Responsive nav menu for small screens */
