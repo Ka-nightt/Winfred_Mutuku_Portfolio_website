@@ -3,20 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My Portfolio</title>
+    <title>My Portfolio | Winfred Mutuku</title>
     <style>
       :root {
-        --primary-color: #0f766e; /* Teal-700 - rich, professional */
-        --secondary-color: #14b8a6; /* Teal-500 - vibrant accent */
-        --light-color: #f8fafc; /* Slate-50 - soft white */
-        --dark-color: #0f172a; /* Slate-900 - deep navy */
-        --text-color: #334155; /* Slate-700 - comfortable reading */
-        --accent-color: #f97316; /* Orange-500 - warm coral accent */
+        --primary-color: #0f766e;
+        --secondary-color: #14b8a6;
+        --light-color: #f8fafc;
+        --dark-color: #0f172a;
+        --text-color: #334155;
+        --accent-color: #f97316;
         --font-heading: "Poppins", sans-serif;
         --font-body: "Open Sans", sans-serif;
       }
 
-      /* Reset and base */
       * {
         box-sizing: border-box;
         margin: 0;
@@ -38,7 +37,6 @@
         color: var(--accent-color);
       }
 
-      /* Container */
       .container {
         max-width: 1200px;
         margin-left: auto;
@@ -46,7 +44,6 @@
         padding: 0 1rem;
       }
 
-      /* Header */
       header {
         background-color: white;
         position: sticky;
@@ -82,7 +79,6 @@
         color: white;
       }
 
-      /* Hero Section */
       #hero {
         background: linear-gradient(
           135deg,
@@ -101,10 +97,8 @@
       #hero p {
         font-size: 1.25rem;
         max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-        color: #e2e8f0; /* Slate-200 - lighter for contrast */
-        margin-bottom: 2.5rem;
+        margin: 0 auto 2.5rem;
+        color: #e2e8f0;
       }
       #hero .cta-btn {
         background-color: white;
@@ -116,9 +110,7 @@
         border: none;
         cursor: pointer;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition:
-          background-color 0.3s ease,
-          color 0.3s ease;
+        transition: all 0.3s ease;
         text-decoration: none;
         display: inline-block;
       }
@@ -126,9 +118,9 @@
         background-color: var(--accent-color);
         color: white;
         box-shadow: 0 6px 10px rgba(249, 115, 22, 0.5);
+        transform: translateY(-2px);
       }
 
-      /* About Section */
       #about {
         background-color: white;
         padding: 4rem 1rem 5rem;
@@ -139,11 +131,20 @@
         gap: 2rem;
         align-items: center;
       }
-      #about img {
-        border-radius: 1rem;
-        width: 320px;
-        max-width: 100%;
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+      .profile-emoji {
+        font-size: 8rem;
+        text-align: center;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
       }
       #about h2 {
         font-family: var(--font-heading);
@@ -161,7 +162,7 @@
         gap: 0.8rem;
       }
       #about .skill {
-        background-color: #e0f2fe; /* Light blue-teal */
+        background-color: #e0f2fe;
         padding: 0.6rem 1rem;
         border-radius: 20px;
         font-weight: 600;
@@ -176,7 +177,6 @@
         transform: translateY(-2px);
       }
 
-      /* Portfolio Section */
       #portfolio {
         background-color: var(--light-color);
         padding: 4rem 1rem 5rem;
@@ -190,11 +190,10 @@
       }
       #portfolio-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 2rem;
-        max-width: 1100px;
-        margin-left: auto;
-        margin-right: auto;
+        max-width: 1200px;
+        margin: 0 auto;
       }
       .project-card {
         background: white;
@@ -203,17 +202,20 @@
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
         display: flex;
         flex-direction: column;
-        transition: transform 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        cursor: pointer;
       }
       .project-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-        cursor: pointer;
       }
-      .project-image {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
+      .project-icon {
+        font-size: 4rem;
+        text-align: center;
+        padding: 2rem 1rem 1rem;
+        background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
       }
       .project-content {
         padding: 1rem 1.25rem 1.5rem;
@@ -230,18 +232,135 @@
       .project-description {
         flex: 1;
         font-size: 0.95rem;
-        color: #475569; /* Slate-600 */
+        color: #475569;
         margin-bottom: 1rem;
+      }
+      .tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .tech-stack span {
+        background-color: #f1f5f9;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+      .project-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.5rem;
       }
       .project-links a {
         text-decoration: none;
-        color: var(--accent-color);
         font-weight: 600;
         font-size: 0.9rem;
+        color: var(--accent-color);
         transition: color 0.3s ease;
       }
       .project-links a:hover {
         color: var(--primary-color);
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+        animation: fadeIn 0.3s ease;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .modal-content {
+        background-color: white;
+        margin: 5% auto;
+        padding: 2rem;
+        border-radius: 20px;
+        max-width: 700px;
+        width: 90%;
+        max-height: 85%;
+        overflow-y: auto;
+        position: relative;
+        animation: slideIn 0.3s ease;
+      }
+      @keyframes slideIn {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      .close-modal {
+        position: absolute;
+        right: 1.5rem;
+        top: 1rem;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #94a3b8;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+      .close-modal:hover {
+        color: var(--accent-color);
+      }
+      .modal h2 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+      .modal h3 {
+        color: var(--secondary-color);
+        margin: 1rem 0 0.5rem;
+      }
+      .modal-features {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.75rem;
+        margin: 1rem 0;
+      }
+      .modal-features li {
+        padding: 0.5rem;
+        background-color: #f1f5f9;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+      .modal-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      .modal-btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      .modal-btn:hover {
+        background-color: var(--accent-color);
+        color: white;
+        transform: translateY(-2px);
       }
 
       /* Contact Section */
@@ -252,67 +371,68 @@
       #contact h2 {
         font-family: var(--font-heading);
         font-size: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         color: var(--primary-color);
         text-align: center;
       }
       #contact .container {
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      #contact p {
+        max-width: 500px;
+        margin: 0 auto;
         text-align: center;
+      }
+      #contact .intro {
         font-size: 1.125rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2.5rem;
         color: var(--text-color);
       }
-      #contact form {
+      .contact-items {
         display: flex;
         flex-direction: column;
+        gap: 1.25rem;
+        align-items: center;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
         gap: 1rem;
-      }
-      #contact input,
-      #contact textarea {
-        padding: 0.75rem 1rem;
-        font-size: 1rem;
-        border: 2px solid #cbd5e1; /* Slate-300 */
-        border-radius: 8px;
+        background-color: var(--light-color);
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 1rem 2rem;
+        width: 100%;
         transition: all 0.3s ease;
-        font-family: var(--font-body);
+        color: var(--text-color);
       }
-      #contact input:focus,
-      #contact textarea:focus {
-        outline: none;
-        border-color: var(--primary-color);
-        box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
-      }
-      #contact textarea {
-        resize: vertical;
-        min-height: 120px;
-        font-family: var(--font-body);
-      }
-      #contact button {
-        background-color: var(--primary-color);
-        color: white;
-        font-weight: 700;
-        padding: 0.75rem 0;
-        font-size: 1.125rem;
-        border: none;
-        border-radius: 9999px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-      #contact button:hover {
-        background-color: var(--accent-color);
+      .contact-item:hover {
+        border-color: var(--secondary-color);
+        box-shadow: 0 4px 14px rgba(15, 118, 110, 0.12);
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        color: var(--text-color);
+      }
+      .contact-icon {
+        font-size: 1.75rem;
+        flex-shrink: 0;
+      }
+      .contact-info {
+        text-align: left;
+      }
+      .contact-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #94a3b8;
+        margin-bottom: 0.2rem;
+      }
+      .contact-value {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--primary-color);
       }
 
-      /* Footer */
       footer {
         background-color: var(--dark-color);
-        color: #94a3b8; /* Slate-400 */
+        color: #94a3b8;
         text-align: center;
         padding: 1rem 0;
         font-size: 0.9rem;
@@ -326,7 +446,6 @@
         color: var(--accent-color);
       }
 
-      /* Responsive nav menu for small screens */
       @media (max-width: 768px) {
         nav {
           flex-wrap: wrap;
@@ -338,6 +457,9 @@
           margin-top: 0.5rem;
           gap: 1rem;
           flex-wrap: wrap;
+        }
+        .profile-emoji {
+          font-size: 5rem;
         }
       }
     </style>
@@ -371,31 +493,28 @@
 
     <section id="about" aria-labelledby="about-title">
       <div class="container">
-        <div class="profile-emoji">
-        👨‍💻
-        </div>
-        
+        <div class="profile-emoji">👩‍💻</div>
         <div class="content">
           <h2 id="about-title">About Me</h2>
           <p>
-            A Mobile App Developer and Web Developer passionate about building
-            responsive, user-friendly applications. I enjoy turning ideas into
-            practical digital solutions and continuously improving my skills to
-            create efficient and reliable software.
+            I'm a passionate Mobile App Developer and Web Developer dedicated to
+            building responsive, user-friendly applications. I enjoy turning
+            ideas into practical digital solutions and continuously improving my
+            skills to create efficient and reliable software.
           </p>
           <p>
-            When I'm not coding, you'll find me reading novels, hiking or
+            When I'm not coding, you'll find me reading novels, hiking, or
             exploring nature.
           </p>
           <div class="skills" aria-label="Skills">
-            <span class="skill">web development</span>
-            <span class="skill">mobile app development</span>
+            <span class="skill">Web Development</span>
+            <span class="skill">Mobile App Development</span>
             <span class="skill">React</span>
+            <span class="skill">Django</span>
             <span class="skill">Node.js</span>
             <span class="skill">UX/UI Design</span>
             <span class="skill">Git</span>
-            <span class="skill">Web Design</span>
-            <span class="skill">Artificial inteligence</span>
+            <span class="skill">AI/ML</span>
           </div>
         </div>
       </div>
@@ -404,114 +523,139 @@
     <section id="portfolio" aria-labelledby="portfolio-title">
       <h2 id="portfolio-title">Portfolio</h2>
       <div id="portfolio-grid">
-        <article class="project-card" tabindex="0" aria-label="Project: T">
-          <div class="profile-emoji">
-           👨‍💻
-          </div>
+        <article class="project-card" data-project="attachtrack">
+          <div class="project-icon">📋</div>
           <div class="project-content">
-            <h3 class="project-title">To-do Web Application</h3>
+            <h3 class="project-title">
+              AttachTrack - Internship Monitoring System
+            </h3>
             <p class="project-description">
-              A task management web application built with Django for the
-              backend and HTML/CSS/JS for the frontend allowing users to
-              securely organize their daily tasks with a clean and interactive
-              interface.
+              A comprehensive Django-based platform for managing internships,
+              attachments, and student supervision with digital logbooks,
+              real-time feedback, and verified attendance.
             </p>
+            <div class="tech-stack">
+              <span>Django</span><span>Python</span><span>PostgreSQL</span
+              ><span>Bootstrap</span><span>Vercel</span>
+            </div>
             <div class="project-links">
               <a
-                href="https://github.com/Ka-nightt/todo_app.git"
+                href="https://attachtrack-dyad.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Code</a
+                >Live Demo →</a
               >
-              |
               <a
-                href="https://github.com/Ka-nightt/todo_app.git"
+                href="https://github.com/Ka-nightt/attachtrack"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Live Demo</a
+                >GitHub →</a
               >
             </div>
           </div>
         </article>
 
-        <article
-          class="project-card"
-          tabindex="0"
-          aria-label="Project: Portfolio Website Template"
-        >
-          <div class="project-image-emoji">
-           📝
-          </div>
+        <article class="project-card" data-project="todo">
+          <div class="project-icon">✅</div>
           <div class="project-content">
-            <h3 class="project-title">AI model development</h3>
-              <p class="project-description">
-                Built several AI models in Google Colab using Python. Worked on
-                image classification, sentiment analysis, and predictive modeling
-                with libraries like TensorFlow and scikit-learn.
-              </p>
-          <div class="project-links">
-          <a
-            href="https://github.com/Ka-nightt/AI-models.git"
-             target="_blank"
-              rel="noopener noreferrer"
-             >GitHub Repo</a
-            >
-            |
-             <a
-              href="#"
-             target="_blank"
-              rel="noopener noreferrer"
-             >View Notebooks</a>
-                              
+            <h3 class="project-title">To-do Web Application</h3>
+            <p class="project-description">
+              A task management web application built with Django for the
+              backend and HTML/CSS/JS for the frontend, allowing users to
+              securely organize their daily tasks with a clean and interactive
+              interface.
+            </p>
+            <div class="tech-stack">
+              <span>Django</span><span>Python</span><span>HTML/CSS</span
+              ><span>JavaScript</span>
             </div>
-              
+            <div class="project-links">
+              <a
+                href="https://github.com/Ka-nightt/todo_app.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub →</a
+              >
             </div>
           </div>
         </article>
-        <div class="project-card">
-        <img src="notes-app-screenshot.png" alt="Notes App">
-        <h3>Notes App</h3>
-        <p>A clean, responsive note-taking app with local storage to save your notes.</p>
-        <div class="tech-stack">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        </div>
-        <div class="project-links">
-        <a href="https://ka-nightt.github.io/notes_app" target="_blank">Live Demo →</a>
-        <a href="https://github.com/Ka-nightt/notes_app" target="_blank">GitHub →</a>
-        </div>
-        </div>
-        <article
-          class="project-card"
-          tabindex="0"
-          aria-label="Project: Task Management App"
-        >
-         <div class="project-image-emoji">
-         🤖
-         </div>
+
+        <article class="project-card" data-project="ai">
+          <div class="project-icon">🤖</div>
+          <div class="project-content">
+            <h3 class="project-title">AI Model Development</h3>
+            <p class="project-description">
+              Built several AI models in Google Colab using Python. Worked on
+              image classification, sentiment analysis, and predictive modeling
+              with libraries like TensorFlow and scikit-learn.
+            </p>
+            <div class="tech-stack">
+              <span>Python</span><span>TensorFlow</span><span>Scikit-learn</span
+              ><span>Google Colab</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/Ka-nightt/AI-models.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub →</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-project="notes">
+          <div class="project-icon">📝</div>
+          <div class="project-content">
+            <h3 class="project-title">Notes App</h3>
+            <p class="project-description">
+              A clean, responsive note-taking app with local storage to save
+              your notes. Perfect for quick reminders and daily organization.
+            </p>
+            <div class="tech-stack">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span
+              ><span>Local Storage</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://ka-nightt.github.io/notes_app"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Live Demo →</a
+              >
+              <a
+                href="https://github.com/Ka-nightt/notes_app"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub →</a
+              >
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-project="quiz">
+          <div class="project-icon">❓</div>
           <div class="project-content">
             <h3 class="project-title">Quiz App</h3>
             <p class="project-description">
-              A front-end quiz app built with HTML, CSS, and JavaScript. Just
-              open the file in a live browser to start answering multiple-choice
-              questions and get instant scores.
+              A front-end quiz app built with HTML, CSS, and JavaScript. Answer
+              multiple-choice questions and get instant scores.
             </p>
+            <div class="tech-stack">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
             <div class="project-links">
               <a
                 href="https://github.com/Ka-nightt/quiz_app.git"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Code</a
+                >GitHub →</a
               >
-              <div class="project-image-emoji">
-               ❓
-              </div>
               <a
                 href="https://ka-nightt.github.io/quiz_app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Live Demo</a
+                >Live Demo →</a
               >
             </div>
           </div>
@@ -519,86 +663,77 @@
       </div>
     </section>
 
-    <section id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Get In Touch</h2>
-      <div class="container">
+    <!-- AttachTrack Modal -->
+    <div id="attachtrack-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>📋 AttachTrack</h2>
+        <p><strong>Smart Internship & Attachment Monitoring System</strong></p>
         <p>
-          If you’d like to discuss a project or just say hello, feel free to get
-          in touch!
+          A comprehensive platform for managing internships, attachments, and
+          student supervision with digital logbooks, real-time feedback, and
+          verified attendance.
         </p>
-        <form id="contact-form" aria-label="Contact form" novalidate>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Your Name"
-            required
-            aria-required="true"
-            aria-describedby="name-error"
-          />
-          <div
-            id="name-error"
-            class="error-message"
-            aria-live="polite"
-            style="color: red; font-size: 0.8rem; display: none"
+        <h3>🎯 Key Features</h3>
+        <ul class="modal-features">
+          <li>🎓 Student Portal - Digital logbooks & file uploads</li>
+          <li>👔 Supervisor Dashboard - Real-time feedback</li>
+          <li>✅ Attendance Tracking - Check-in with verification</li>
+          <li>📊 Analytics Dashboard - Progress monitoring</li>
+          <li>📅 Visit Scheduling - Plan physical visits</li>
+          <li>💬 Communication System - Comments & notifications</li>
+        </ul>
+        <h3>🛠️ Technologies Used</h3>
+        <div class="tech-stack" style="margin-bottom: 1rem">
+          <span>Django 4.x</span><span>Python 3.11</span><span>PostgreSQL</span
+          ><span>Bootstrap 5</span><span>Vercel</span><span>Whitenoise</span>
+        </div>
+        <h3>👥 User Roles</h3>
+        <ul class="modal-features">
+          <li>🎓 Students</li>
+          <li>🏫 School Supervisors</li>
+          <li>🏢 Industry Supervisors</li>
+          <li>⚙️ Administrators</li>
+        </ul>
+        <div class="modal-links">
+          <a
+            href="https://attachtrack-dyad.vercel.app/"
+            target="_blank"
+            class="modal-btn"
+            >🚀 Live Demo</a
           >
-            Please enter your name.
-          </div>
+          <a
+            href="https://github.com/Ka-nightt/attachtrack"
+            target="_blank"
+            class="modal-btn"
+            style="background-color: #24292e"
+            >💻 View Code</a
+          >
+        </div>
+      </div>
+    </div>
 
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Your Email"
-            required
-            aria-required="true"
-            aria-describedby="email-error"
-          />
-          <div
-            id="email-error"
-            class="error-message"
-            aria-live="polite"
-            style="color: red; font-size: 0.8rem; display: none"
-          >
-            Please enter a valid email address.
-          </div>
-
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            required
-            aria-required="true"
-            aria-describedby="message-error"
-          ></textarea>
-          <div
-            id="message-error"
-            class="error-message"
-            aria-live="polite"
-            style="color: red; font-size: 0.8rem; display: none"
-          >
-            Please enter your message.
-          </div>
-
-          <button type="submit">Send Message</button>
-          <div
-            id="form-success"
-            style="
-              color: green;
-              font-size: 1rem;
-              margin-top: 1rem;
-              display: none;
-            "
-          >
-            Thank you for your message! I will get back to you soon.
-          </div>
-        </form>
-        <p style="text-align: center; margin-top: 2rem">
-          <strong>Email:</strong>
-          <a href="mailto:jane.doe@example.com">winmutuku23@gmail.com</a><br />
-          <strong>Phone:</strong> <a href="tel:+1234567890">0793574379</a>
-        </p>
+    <!-- Contact Section -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <div class="container">
+        <p class="intro">Feel free to reach out — I'd love to hear from you!</p>
+        <div class="contact-items">
+          <a href="mailto:winmutuku23@gmail.com" class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div class="contact-info">
+              <div class="contact-label">Email</div>
+              <div class="contact-value">winmutuku23@gmail.com</div>
+            </div>
+          </a>
+          <a href="tel:+254793574379" class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div class="contact-info">
+              <div class="contact-label">Phone</div>
+              <div class="contact-value">0793 574 379</div>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -622,7 +757,7 @@
         >
         |
         <a
-          href="https://github.com/"
+          href="https://github.com/Ka-nightt"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
@@ -632,12 +767,11 @@
     </footer>
 
     <script>
-      // Highlight active nav links on scroll
       const sections = document.querySelectorAll("section[id]");
       const navLinks = document.querySelectorAll(".nav-link");
 
       window.addEventListener("scroll", () => {
-        let scrollPos = window.scrollY + 80; // offset for sticky header
+        let scrollPos = window.scrollY + 80;
         sections.forEach((section) => {
           if (
             scrollPos >= section.offsetTop &&
@@ -645,55 +779,33 @@
           ) {
             navLinks.forEach((link) => {
               link.classList.remove("active");
-              if (link.getAttribute("href") === "#" + section.id) {
+              if (link.getAttribute("href") === "#" + section.id)
                 link.classList.add("active");
-              }
             });
           }
         });
       });
 
-      // Contact form validation and submission
-      const form = document.getElementById("contact-form");
-      const nameInput = document.getElementById("name");
-      const emailInput = document.getElementById("email");
-      const messageInput = document.getElementById("message");
-      const nameError = document.getElementById("name-error");
-      const emailError = document.getElementById("email-error");
-      const messageError = document.getElementById("message-error");
-      const successMessage = document.getElementById("form-success");
+      const modal = document.getElementById("attachtrack-modal");
+      const projectCard = document.querySelector(
+        '[data-project="attachtrack"]',
+      );
+      const closeBtn = document.querySelector(".close-modal");
 
-      function validateEmail(email) {
-        // Basic email regex
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (projectCard) {
+        projectCard.addEventListener("click", () => {
+          modal.style.display = "block";
+          document.body.style.overflow = "hidden";
+        });
       }
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        let valid = true;
-        // Reset error messages
-        nameError.style.display = "none";
-        emailError.style.display = "none";
-        messageError.style.display = "none";
-        successMessage.style.display = "none";
-
-        if (nameInput.value.trim() === "") {
-          nameError.style.display = "block";
-          valid = false;
-        }
-        if (!validateEmail(emailInput.value.trim())) {
-          emailError.style.display = "block";
-          valid = false;
-        }
-        if (messageInput.value.trim() === "") {
-          messageError.style.display = "block";
-          valid = false;
-        }
-
-        if (valid) {
-          // Normally here you would send the form data to a server
-          successMessage.style.display = "block";
-          form.reset();
+      closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+      });
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+          document.body.style.overflow = "auto";
         }
       });
     </script>
